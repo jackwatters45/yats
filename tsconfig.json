@@ -1,0 +1,28 @@
+{
+	"compilerOptions": {
+		"target": "es2020",
+		"jsx": "react-jsx",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"sourceMap": true,
+		"outDir": "dist",
+		"removeComments": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"useUnknownInCatchVariables": false,
+		"alwaysStrict": true,
+		"noUnusedParameters": true,
+		"skipLibCheck": true,
+		"typeRoots": ["./node_modules/@types", "/src/types"],
+		"jsxImportSource": "react"
+	},
+	"include": ["src"],
+	"extends": "astro/tsconfigs/base"
+}

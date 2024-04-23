@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-mate-white text-mate-grey dark:bg-mate-grey dark:text-mate-white list-none overscroll-none overflow-x-hidden;
+
+  scroll-behavior: smooth;
+}

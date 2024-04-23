@@ -1,0 +1,44 @@
+---
+import Navbar from "@/components/Navbar";
+import "../styles/globals.css";
+
+export interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- TODO better desc -->
+    <meta
+      name="description"
+      content={description ??
+        'A suite of productivity apps to make your life easier.'}
+    />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="flex min-h-screen flex-col items-center gap-4 font-sans">
+      <Navbar client:load />
+      <main class="w-full max-w-screen-xl flex-1 pt-16">
+        <div class="xs:px-12 px-6 py-6 sm:px-24">
+          <slot />
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
