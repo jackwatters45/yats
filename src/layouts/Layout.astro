@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import "../styles/globals.css";
 
 export interface Props {
-	title: string;
+	title?: string;
 	description?: string;
 }
 
@@ -17,13 +17,12 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <!-- TODO better desc -->
     <meta
       name="description"
       content={description ??
-        'A suite of productivity apps to make your life easier.'}
+        'Yats is working to develop cutting-edge software solutions aimed at simplifying processes that are currently over-engineered or lacking effective solutions. '}
     />
-    <title>{title}</title>
+    <title>{title ?? 'YATS: Ya Tú Sabes'}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,6 +38,21 @@ const { title, description } = Astro.props;
           <slot />
         </div>
       </main>
+      <footer
+        class="flex w-full shrink-0 flex-col items-center gap-2 border-t px-4 py-6 text-xs text-mate-muted-dark sm:flex-row md:px-6 dark:border-mate-white/10 dark:text-mate-muted-light"
+      >
+        <p class="">
+          © {new Date().getFullYear()} Yats Co. All rights reserved.
+        </p>
+        <nav class="flex gap-4 sm:ml-auto sm:gap-6">
+          <a class="underline-offset-4 hover:underline" href="/terms">
+            Terms of Service
+          </a>
+          <a class="underline-offset-4 hover:underline" href="/privacy"
+            >Privacy</a
+          >
+        </nav>
+      </footer>
     </div>
   </body>
 </html>
