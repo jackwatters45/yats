@@ -1,0 +1,24 @@
+---
+import NavMenu from "../nav/NavMenu";
+import { NavigationMenuItem } from "../ui/navigation-menu";
+---
+
+<nav
+  class="fixed z-50 flex h-16 w-full items-center justify-center border-b backdrop-blur-lg dark:border-mate-white/10"
+>
+  <div class="flex w-full max-w-screen-xl items-center justify-between px-6">
+    <NavigationMenuItem>
+      <a href="/" aria-label="Home" class="flex items-center gap-2">
+        <img
+          src="https://res.cloudinary.com/drheg5d7j/image/upload/v1713829143/YATS_favicon_diyjqu.webp"
+          alt="Company Logo"
+          class="h-8 w-8 object-cover mb-1"
+        />
+        <h1 class="text-xl font-semibold">YATS</h1>
+      </a>
+    </NavigationMenuItem>
+    <div>
+      <NavMenu client:load />
+    </div>
+  </div>
+</nav>
