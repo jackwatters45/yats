@@ -14,9 +14,11 @@ const buttonVariants = cva(
 				destructive:
 					"bg-red-500 text-stone-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-stone-50 dark:hover:bg-red-900/90",
 				outline:
-					"border border-stone-200 bg-white hover:bg-stone-100 hover:text-stone-900 dark:border-stone-700 dark:bg-stone-900 dark:hover:bg-stone-800 dark:hover:text-stone-50",
+					"border border-stone-200 bg-white hover:bg-stone-100 hover:text-stone-900 dark:border-mate-muted-light/30 dark:bg-stone-900 dark:hover:bg-mate-grey dark:hover:text-stone-50",
 				secondary:
-					"bg-stone-100 text-stone-900 hover:bg-stone-100/80 dark:bg-stone-800 dark:text-stone-50 dark:hover:bg-stone-800/80",
+					"bg-stone-100 text-stone-900 hover:bg-stone-100/80 dark:bg-mate-green dark:text-stone-50 dark:hover:bg-stone-800/80",
+				tertiary:
+					"bg-stone-100 text-stone-900 hover:bg-stone-100/80 dark:bg-mate-muted-light dark:text-stone-50 dark:hover:bg-stone-800/80",
 				ghost:
 					"hover:bg-stone-100 hover:text-stone-900 dark:hover:bg-stone-700/50 dark:hover:text-stone-50",
 				link: "text-stone-900 underline-offset-4 hover:underline dark:text-stone-50",
