@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -44,9 +45,25 @@ export default function ContactForm() {
 		},
 	});
 
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		// TODO send form data to backend -> email myself
-		console.log(values);
+	async function onSubmit(values: z.infer<typeof formSchema>) {
+		try {
+			const response = await fetch("/api/addToMailing", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(values),
+			});
+
+			const data = await response.json();
+
+			if (response.ok) {
+				toast.success(data.message);
+				form.reset();
+			} else {
+				toast.error(data.message);
+			}
+		} catch (error) {
+			toast.error("An error occurred. Please try again.");
+		}
 	}
 
 	return (

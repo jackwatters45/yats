@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import Navbar from "@/components/Navbar";
+import Nav from "@/components/nav/Nav.astro";
+import { Toaster } from "@/components/ui/sonner";
 import "../styles/globals.css";
 
 export interface Props {
@@ -34,9 +35,9 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <div class="flex min-h-screen flex-col items-center gap-4 font-sans">
-      <Navbar client:load />
+      <Nav />
       <main class="w-full max-w-screen-xl flex-1 pt-16">
-        <div class="xs:px-12 px-6 py-6 sm:px-24">
+        <div>
           <slot />
         </div>
       </main>
@@ -56,5 +57,6 @@ const { title, description } = Astro.props;
         </nav>
       </footer>
     </div>
+    <Toaster />
   </body>
 </html>
