@@ -9,65 +9,74 @@ export const prerender = false;
 
 // send contact request received email
 export const POST: APIRoute = async ({ request: req }) => {
-	if (req.method && req.method !== "POST") {
-		return new Response(
-			JSON.stringify({
-				message: "'Method not allowed, only POST requests are allowed'",
-				"req.method": req.method,
-				"req.headers": req.headers,
-			}),
-			{ status: 406 },
-		);
-	}
+	return new Response(
+		JSON.stringify({
+			message: "'Method not allowed, only POST requests are allowed'",
+			"req.method": req.method,
+			"req.headers": req.headers,
+		}),
+		{ status: 406 },
+	);
 
-	const data = (await req.json()) as ContactFormSchema | undefined;
-	if (!data) {
-		return new Response(
-			JSON.stringify({ message: "Invalid form data submitted.." }),
-			{
-				status: 400,
-			},
-		);
-	}
+	// if (req.method && req.method !== "POST") {
+	// 	return new Response(
+	// 		JSON.stringify({
+	// 			message: "'Method not allowed, only POST requests are allowed'",
+	// 			"req.method": req.method,
+	// 			"req.headers": req.headers,
+	// 		}),
+	// 		{ status: 406 },
+	// 	);
+	// }
 
-	try {
-		await useRateLimit();
+	// const data = (await req.json()) as ContactFormSchema | undefined;
+	// if (!data) {
+	// 	return new Response(
+	// 		JSON.stringify({ message: "Invalid form data submitted.." }),
+	// 		{
+	// 			status: 400,
+	// 		},
+	// 	);
+	// }
 
-		// add to db
-		await db.insert(ContactRequest).values({
-			firstName: data.firstName,
-			lastName: data.lastName,
-			email: data.email,
-			phone: data.phone ?? null,
-			companyName: data.companyName ?? null,
-			message: data.message,
-		});
+	// try {
+	// 	await useRateLimit();
 
-		// send email to user
-		const resend = new Resend(import.meta.env.RESEND_API_KEY);
-		resend.emails.send({
-			from: "Yats Support <support@yatusabes.co>",
-			to: data.email,
-			subject: "Request Received",
-			html: getMessage({ name: `${data.firstName} ${data.lastName}` }),
-		});
+	// 	// add to db
+	// 	await db.insert(ContactRequest).values({
+	// 		firstName: data.firstName,
+	// 		lastName: data.lastName,
+	// 		email: data.email,
+	// 		phone: data.phone ?? null,
+	// 		companyName: data.companyName ?? null,
+	// 		message: data.message,
+	// 	});
 
-		// send email to support
-		resend.emails.send({
-			from: "Yats Support <support@yatusabes.co>",
-			to: "support@yatusabes.co",
-			subject: "New Contact Request",
-			text: emailToSupport(data),
-		});
+	// 	// send email to user
+	// 	const resend = new Resend(import.meta.env.RESEND_API_KEY);
+	// 	resend.emails.send({
+	// 		from: "Yats Support <support@yatusabes.co>",
+	// 		to: data.email,
+	// 		subject: "Request Received",
+	// 		html: getMessage({ name: `${data.firstName} ${data.lastName}` }),
+	// 	});
 
-		return new Response(JSON.stringify({ message: "Email sent successfully" }));
-	} catch (error) {
-		console.error(error);
-		return new Response(
-			JSON.stringify({ message: "Failed to send email", error: error }),
-			{ status: 500 },
-		);
-	}
+	// 	// send email to support
+	// 	resend.emails.send({
+	// 		from: "Yats Support <support@yatusabes.co>",
+	// 		to: "support@yatusabes.co",
+	// 		subject: "New Contact Request",
+	// 		text: emailToSupport(data),
+	// 	});
+
+	// 	return new Response(JSON.stringify({ message: "Email sent successfully" }));
+	// } catch (error) {
+	// 	console.error(error);
+	// 	return new Response(
+	// 		JSON.stringify({ message: "Failed to send email", error: error }),
+	// 		{ status: 500 },
+	// 	);
+	// }
 };
 
 const getMessage = ({ name }: { name: string }) => `<!DOCTYPE html>
