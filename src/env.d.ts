@@ -3,12 +3,14 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-  readonly RESEND_API_KEY: string;
+	readonly RESEND_API_KEY: string;
 
-  readonly UPSTASH_REDIS_REST_URL: string;
-  readonly UPSTASH_REDIS_REST_TOKEN: string;
+	readonly UPSTASH_REDIS_REST_URL: string;
+	readonly UPSTASH_REDIS_REST_TOKEN: string;
+
+	readonly ASTRO_STUDIO_APP_TOKEN: string;
 }
 
 interface ImportMeta {
-  readonly env: ImportMetaEnv;
+	readonly env: ImportMetaEnv;
 }
