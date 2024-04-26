@@ -1,0 +1,84 @@
+---
+import { Button } from "@/components/ui/button";
+import Layout from "@/layouts/Layout.astro";
+
+export const prerender = false;
+const email = Astro.url.searchParams.get("email");
+
+// If no email is provided, redirect to home page
+if (!email) return Astro.redirect("/");
+
+// remove email from mailing list
+const res = await fetch(
+	`http://localhost:4321/api/mailing-list?email=${encodeURIComponent(email)}`,
+);
+
+// if successful, redirect to login page
+if (res.status === 302) return Astro.redirect("/");
+
+const data = await res.json();
+
+const error = !data.ok ? data?.message : null;
+---
+
+<Layout>
+  <section
+    class="w-full py-24 md:py-32 container flex flex-col items-center gap-8 px-16 max-w-screen-sm"
+  >
+    <div class="text-center space-y-2">
+      <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl loading-text">
+        Unsubscribing from mailing list<span>.</span><span>.</span><span>.</span
+        >
+      </h1>
+      <p class="max-w-[600px] text-mate-muted-dark dark:text-mate-muted-light">
+        If you are not redirected in a few seconds, please click the button
+        below.
+      </p>
+    </div>
+    <div
+      class="flex justify-between flex-col sm:flex-row-reverse w-full text-center"
+    >
+      <Button
+        type="button"
+        id="unsubscribe-button"
+        variant={'outline'}
+        data-error={error}
+      >
+        Unsubscribe
+      </Button>
+      {
+        error && (
+          <p class="text-red-500 dark:text-red-400 text-sm mt-2">{error}</p>
+        )
+      }
+    </div>
+  </section>
+</Layout>
+<style>
+  .loading-text span {
+    opacity: 0;
+    animation: dotFlashing 2s infinite linear both;
+  }
+
+  @keyframes dotFlashing {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .loading-text span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .loading-text span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  .loading-text span:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+</style>
