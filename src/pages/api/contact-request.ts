@@ -1,6 +1,6 @@
+// /pages/api/contact-request.ts
 import { ContactRequest, db } from "astro:db";
 import type { ContactFormSchema } from "@/components/ContactForm";
-// /pages/api/contact.ts
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
 import { useRateLimit } from "./utils/rate-limit";
@@ -9,7 +9,7 @@ export const prerender = false;
 
 // send contact request received email
 export const POST: APIRoute = async ({ request: req }) => {
-	if (req.method !== "POST") {
+	if (req.method && req.method !== "POST") {
 		return new Response(
 			JSON.stringify({
 				message: "'Method not allowed, only POST requests are allowed'",
