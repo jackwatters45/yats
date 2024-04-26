@@ -1,4 +1,5 @@
 ---
+import HamburgerMenu from "../nav/HamburgerMenu";
 import NavMenu from "../nav/NavMenu";
 import { NavigationMenuItem } from "../ui/navigation-menu";
 ---
@@ -17,8 +18,11 @@ import { NavigationMenuItem } from "../ui/navigation-menu";
         <h1 class="text-xl font-semibold">YATS</h1>
       </a>
     </NavigationMenuItem>
-    <div>
+    <div class="hidden md:block">
       <NavMenu client:load />
+    </div>
+    <div class="block md:hidden">
+      <HamburgerMenu client:load />
     </div>
   </div>
 </nav>

@@ -17,9 +17,9 @@ import {
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "./ui/card";
-import { Input } from "./ui/input";
-import { toast } from "./ui/use-toast";
+} from "../ui/card";
+import { Input } from "../ui/input";
+import { toast } from "../ui/use-toast";
 
 const formSchema = z.object({
 	name: z.string().min(2).max(80),
