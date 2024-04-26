@@ -99,6 +99,8 @@ export default function ContactForm() {
 							{JSON.stringify(formData)}
 							---
 							{JSON.stringify(response)}
+							---
+							{JSON.stringify(data)}
 						</code>
 					),
 					// `Error: ${data.message ?? 'unknown'}`,
