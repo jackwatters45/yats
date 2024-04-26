@@ -79,14 +79,18 @@ export default function ContactForm() {
 
 		console.log(JSON.stringify(formData));
 
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		let response: any;
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		let data: any;
 		try {
-			const response = await fetch("/api/contact-request", {
+			response = await fetch("/api/contact-request", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(formData),
 			});
 
-			const data = await response.json();
+			data = await response.json();
 
 			if (response.ok) {
 				toast({ description: "Your message has been sent successfully!" });
@@ -94,16 +98,7 @@ export default function ContactForm() {
 			} else {
 				toast({
 					title: "An error occurred. Please try again.",
-					description: (
-						<code>
-							{JSON.stringify(formData)}
-							---
-							{JSON.stringify(response)}
-							---
-							{JSON.stringify(data)}
-						</code>
-					),
-					// `Error: ${data.message ?? 'unknown'}`,
+					description: `Error: ${data.message ?? "unknown"}`,
 					variant: "destructive",
 				});
 				setFormError(data.message);
@@ -114,7 +109,9 @@ export default function ContactForm() {
 				description: `Error: ${error ?? "unknown"}`,
 				variant: "destructive",
 			});
-			setFormError("An error occurred. Please try again.");
+			// setFormError('An error occurred. Please try again.');
+			const debug = JSON.stringify({ formData, response, data, error });
+			setFormError(debug);
 		}
 	}
 
