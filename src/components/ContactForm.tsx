@@ -94,7 +94,14 @@ export default function ContactForm() {
 			} else {
 				toast({
 					title: "An error occurred. Please try again.",
-					description: `Error: ${data.message ?? "unknown"}`,
+					description: (
+						<code>
+							{JSON.stringify(formData)}
+							---
+							{JSON.stringify(response)}
+						</code>
+					),
+					// `Error: ${data.message ?? 'unknown'}`,
 					variant: "destructive",
 				});
 				setFormError(data.message);

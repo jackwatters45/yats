@@ -9,6 +9,9 @@ interface ImportMetaEnv {
 	readonly UPSTASH_REDIS_REST_TOKEN: string;
 
 	readonly ASTRO_STUDIO_APP_TOKEN: string;
+
+	readonly BASE_URL_DEV: string;
+	readonly BASE_URL_PROD: string;
 }
 
 interface ImportMeta {

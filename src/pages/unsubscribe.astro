@@ -10,7 +10,9 @@ if (!email) return Astro.redirect("/");
 
 // remove email from mailing list
 const res = await fetch(
-	`http://localhost:4321/api/mailing-list?email=${encodeURIComponent(email)}`,
+	`https://www.yatusabes.co/api/mailing-list?email=${encodeURIComponent(
+		email,
+	)}`,
 );
 
 // if successful, redirect to login page
