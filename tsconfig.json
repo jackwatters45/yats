@@ -23,6 +23,5 @@
 		"typeRoots": ["./node_modules/@types", "/src/types"],
 		"jsxImportSource": "react"
 	},
-	"include": ["src"],
 	"extends": "astro/tsconfigs/strictest"
 }
