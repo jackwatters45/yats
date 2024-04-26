@@ -8,7 +8,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <section
-    class="w-full flex flex-col justify-center items-center pt-24 md:pt-32 lg:pt-40 text-center"
+    class="w-full flex flex-col justify-center items-center pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-20 lg:pb-24 text-center"
   >
     <div
       class="text-sm sm:text-base pb-6 font-bold text-mate-green dark:text-mate-light-green"
@@ -36,17 +36,16 @@ import Layout from "../layouts/Layout.astro";
         <ArrowRightIcon />
       </Button>
     </div>
-  </section>
-  <div class="pt-32 pb-16 md:pb-20 lg:pb-24 px-8 md:px-16 lg:px-24">
-    <img
+    <div class="pt-32 px-8 md:px-16 lg:px-24 hidden xs:block">
+      <img
       src="https://res.cloudinary.com/drheg5d7j/image/upload/v1714015567/Yats_pouring_water_no_background_1_ho1org.webp"
       alt=""
-    />
-  </div>
+      />
+    </div>
+  </section>
   <div class="border-b dark:border-mate-white/10 w-full"></div>
-  <!-- TODO better preview images -->
   <section
-    class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 max-w-screen-xl justify-center py-16 md:py-20 lg:py-24 px-16 lg:px-16"
+    class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 max-w-screen-xl justify-center py-16 md:py-20 lg:py-24 px-8 xs:px-16"
   >
     <div class="mx-auto lg:mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-1/2">
       <div
@@ -92,7 +91,7 @@ import Layout from "../layouts/Layout.astro";
   </section>
   <div class="border-b dark:border-mate-white/10 w-full"></div>
   <section
-    class="flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-32 max-w-screen-xl justify-center py-16 md:py-20 lg:py-24 lg:py-24 px-16 lg:px-16"
+    class="flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-32 max-w-screen-xl justify-center py-16 md:py-20 lg:py-24 lg:py-24 px-8 xs:px-16"
   >
     <div
       class="w-11/12 sm:w-4/5 md:w-3/4 mx-auto lg:w-1/2 flex flex-wrap lg:-mx-4 justify-center pt-4"
