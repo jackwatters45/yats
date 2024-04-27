@@ -13,7 +13,7 @@ const res = await fetch(
 	`http://localhost:4321/api/mailing-list?email=${encodeURIComponent(email)}`,
 );
 
-// if successful, redirect to login page
+// if successful, redirect to home page
 if (res.status === 302) return Astro.redirect("/");
 
 const data = await res.json();
