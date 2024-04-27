@@ -110,7 +110,7 @@ export default function ContactForm() {
 	}
 
 	return (
-		<Card className="bg-transparent dark:bg-transparent border-transparent space-y-4 md:min-w-[600px]">
+		<Card className="bg-transparent dark:bg-transparent border-transparent space-y-4 md:min-w-[600px] shadow-none">
 			<CardHeader className="space-y-4">
 				<CardTitle className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
 					Contact Our Team

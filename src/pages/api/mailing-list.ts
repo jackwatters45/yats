@@ -65,8 +65,8 @@ export const POST: APIRoute = async ({ request: req }) => {
 			await db.insert(MailingListRecipient).values({ name, email });
 		}
 
-		const resend = new Resend(import.meta.env.RESEND_API_KEY);
-		resend.emails.send({
+		const resend = await new Resend(import.meta.env.RESEND_API_KEY);
+		await resend.emails.send({
 			from: "Yats Support <support@yatusabes.co>",
 			to: email,
 			subject: "Welcome to the Yats community!",
