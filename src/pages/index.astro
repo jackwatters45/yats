@@ -2,8 +2,9 @@
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 import MailingForm from "@/components/forms/MailingForm";
-import { Button } from "@/components/ui/button";
 import Layout from "../layouts/Layout.astro";
+
+// TODO text
 ---
 
 <Layout>
@@ -27,25 +28,25 @@ import Layout from "../layouts/Layout.astro";
       cutting-edge analytic tools.
     </div>
     <div class="pt-12">
-      <Button
-        size={'lg'}
-        variant={'secondary'}
-        className="flex gap-3 items-center pr-5 text-base"
+      <a
+        class="justify-center whitespace-nowrap font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-stone-950 dark:focus-visible:ring-stone-300 bg-mate-muted-dark text-mate-white hover:bg-mate-muted-dark/80 dark:bg-mate-green dark:text-stone-50 dark:hover:bg-mate-green/80 h-11 rounded-md px-8 flex gap-3 items-center pr-5 text-base"
+        href="/#products"
       >
         Check out our products
         <ArrowRightIcon />
-      </Button>
+      </a>
     </div>
-    <div class="pt-32 px-8 md:px-16 lg:px-24 hidden xs:block">
+    <div class="pt-32 px-8 md:px-16 lg:px-24 hidden md:block">
       <img
-      src="https://res.cloudinary.com/drheg5d7j/image/upload/v1714015567/Yats_pouring_water_no_background_1_ho1org.webp"
-      alt=""
+        src="https://res.cloudinary.com/drheg5d7j/image/upload/v1714015567/Yats_pouring_water_no_background_1_ho1org.webp"
+        alt=""
       />
     </div>
   </section>
   <div class="border-b dark:border-mate-white/10 w-full"></div>
   <section
-    class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 max-w-screen-xl justify-center py-16 md:py-20 lg:py-24 px-8 xs:px-16"
+    class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 max-w-screen-xl justify-center py-16 md:py-20 lg:py-24 px-8 xs:px-16 xl:pr-8"
+    id="products"
   >
     <div class="mx-auto lg:mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-1/2">
       <div
@@ -80,26 +81,26 @@ import Layout from "../layouts/Layout.astro";
       </ul>
     </div>
     <div
-      class="w-11/12 sm:w-4/5 md:w-3/4 mx-auto lg:w-1/2 flex flex-wrap lg:-mx-4 justify-center pt-4"
+      class="w-11/12 sm:w-4/5 md:w-3/4 mx-auto lg:w-2/3 relative flex lg:-mx-4 justify-center pt-4 rounded-md"
     >
       <img
-        src="https://res.cloudinary.com/drheg5d7j/image/upload/v1713928258/Screenshot_2024-04-23_at_8.07.19_PM_2_uut2mq.webp"
+        src={undefined}
         alt=""
-        class="rounded-md"
+        class="rounded-md team-send-img1 shadow-2xl"
       />
     </div>
   </section>
   <div class="border-b dark:border-mate-white/10 w-full"></div>
   <section
-    class="flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-32 max-w-screen-xl justify-center py-16 md:py-20 lg:py-24 lg:py-24 px-8 xs:px-16"
+    class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24 max-w-screen-xl justify-center py-16 md:py-20 lg:py-24 lg:py-24 px-8 xs:px-16 xl:pl-8"
   >
     <div
-      class="w-11/12 sm:w-4/5 md:w-3/4 mx-auto lg:w-1/2 flex flex-wrap lg:-mx-4 justify-center pt-4"
+      class="w-11/12 sm:w-4/5 md:w-3/4 mx-auto lg:w-2/3 flex flex-wrap lg:-mx-4 justify-center pt-4 rounded-md"
     >
       <img
-        src="https://res.cloudinary.com/drheg5d7j/image/upload/v1713928258/Screenshot_2024-04-23_at_8.07.19_PM_2_uut2mq.webp"
+        src={undefined}
         alt=""
-        class="rounded-md"
+        class="rounded-md team-send-img2 shadow-2xl"
       />
     </div>
     <div class="mx-auto lg:mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-1/2">
@@ -139,3 +140,43 @@ import Layout from "../layouts/Layout.astro";
     <MailingForm client:idle />
   </section>
 </Layout>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const prefersDarkMode =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const darkTeamSendImg1 =
+      'https://res.cloudinary.com/drheg5d7j/image/upload/v1714179639/teams-send-groups-dark_cxwusq.webp';
+
+    const darkTeamSendImg2 =
+      'https://res.cloudinary.com/drheg5d7j/image/upload/v1714179767/team-send-message-dark_ndyc4o.webp';
+
+    const lightTeamSendImg1 =
+      'https://res.cloudinary.com/drheg5d7j/image/upload/v1714179497/team-send-groups_gbmaqv.webp';
+
+    const lightTeamSendImg2 =
+      'https://res.cloudinary.com/drheg5d7j/image/upload/v1714179747/team-send-message_fohdlj.webp';
+
+    const teamSendImg1 = document.querySelector(
+      '.team-send-img1',
+    ) as HTMLImageElement;
+
+    const teamSendImg2 = document.querySelector(
+      '.team-send-img2',
+    ) as HTMLImageElement;
+    if (prefersDarkMode) {
+      document.documentElement.classList.add('dark');
+
+      if (teamSendImg1) teamSendImg1.src = darkTeamSendImg1;
+
+      if (teamSendImg2) teamSendImg2.src = darkTeamSendImg2;
+    } else {
+      document.documentElement.classList.remove('dark');
+
+      if (teamSendImg1) teamSendImg1.src = lightTeamSendImg1;
+
+      if (teamSendImg2) teamSendImg2.src = lightTeamSendImg2;
+    }
+  });
+</script>

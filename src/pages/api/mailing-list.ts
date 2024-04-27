@@ -1,9 +1,9 @@
-import { MailingListRecipient, db, eq } from "astro:db";
-import type { MailingFormSchema } from "@/components/forms/MailingFormngForm";
 // /pages/api/mailing-list.ts
+import { MailingListRecipient, db, eq } from "astro:db";
+import type { MailingFormSchema } from "@/components/forms/MailingForm";
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
-import { useRateLimit } from "./utils/rate-limit";
+import { useRateLimit } from "../../lib/rate-limit";
 
 export const prerender = false;
 

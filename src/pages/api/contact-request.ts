@@ -1,9 +1,9 @@
 // /pages/api/contact-request.ts
 import { ContactRequest, db } from "astro:db";
-import type { ContactFormSchema } from "@/components/forms/ContactFormctForm";
+import type { ContactFormSchema } from "@/components/forms/ContactForm";
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
-import { useRateLimit } from "./utils/rate-limit";
+import { useRateLimit } from "../../lib/rate-limit";
 
 export const prerender = false;
 

@@ -15,7 +15,6 @@ import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 
-// TODO sheet styling!
 export default function HamburgerMenu() {
 	return (
 		<Sheet>
@@ -25,7 +24,7 @@ export default function HamburgerMenu() {
 				</Button>
 			</SheetTrigger>
 			<SheetContent>
-				<div className="grid gap-4 py-4">
+				<div className="py-4">
 					<Accordion type="multiple">
 						<a
 							href="/"
