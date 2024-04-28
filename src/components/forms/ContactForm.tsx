@@ -77,8 +77,6 @@ export default function ContactForm() {
 			phone: rawFormData.phone ?? undefined,
 		};
 
-		console.log(JSON.stringify(formData));
-
 		try {
 			const response = await fetch("api/contact-request", {
 				method: "POST",

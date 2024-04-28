@@ -45,7 +45,7 @@ export const POST: APIRoute = async ({ request: req }) => {
 		if (user && user.status === "active") {
 			return new Response(
 				JSON.stringify({ message: "Already subscribed to mailing list" }),
-				{ status: 400 },
+				{ status: 200 },
 			);
 		}
 
