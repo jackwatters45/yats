@@ -7,11 +7,6 @@ import { useRateLimit } from "../../lib/rate-limit";
 
 export const prerender = false;
 
-type TempMailingListRecipientType = {
-	status: "active" | "inactive";
-	id: number;
-};
-
 // add to mailing list
 export const POST: APIRoute = async ({ request: req }) => {
 	if (req.method !== "POST") {
@@ -38,15 +33,13 @@ export const POST: APIRoute = async ({ request: req }) => {
 
 		const { name, email } = data;
 
-		const existingSubscriber = (await db
+		const existingSubscriber = await db
 			.select({
 				status: MailingListRecipient.status,
 				id: MailingListRecipient.id,
 			})
 			.from(MailingListRecipient)
-			.where(
-				eq(MailingListRecipient.email, email),
-			)) as TempMailingListRecipientType[];
+			.where(eq(MailingListRecipient.email, email));
 
 		const user = existingSubscriber?.[0];
 		if (user && user.status === "active") {
@@ -65,7 +58,7 @@ export const POST: APIRoute = async ({ request: req }) => {
 			await db.insert(MailingListRecipient).values({ name, email });
 		}
 
-		const resend = await new Resend(import.meta.env.RESEND_API_KEY);
+		const resend = new Resend(import.meta.env.RESEND_API_KEY);
 		await resend.emails.send({
 			from: "Yats Support <support@yatusabes.co>",
 			to: email,
