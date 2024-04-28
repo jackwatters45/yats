@@ -81,7 +81,7 @@ export default function ContactForm() {
 		console.log(JSON.stringify(formData));
 
 		try {
-			const response = await fetch(`/${getBaseURL()}/api/contact-request`, {
+			const response = await fetch("api/contact-request", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(formData),

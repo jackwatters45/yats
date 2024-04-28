@@ -56,14 +56,14 @@ export default function MailingForm() {
 			} else {
 				toast({
 					title: "An error occurred. Please try again.",
-					description: `Error: ${data.message ?? "unknown"}`,
+					description: `Error: ${JSON.stringify(data.message) ?? "unknown"}`,
 					variant: "destructive",
 				});
 			}
 		} catch (error) {
 			toast({
 				title: "An error occurred. Please try again.",
-				description: `Error: ${error ?? "unknown"}`,
+				description: `Error: ${JSON.stringify(data.message) ?? "unknown"}`,
 				variant: "destructive",
 			});
 		}

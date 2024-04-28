@@ -13,5 +13,9 @@
 		"enabled": true,
 		"clientKind": "git",
 		"useIgnoreFile": true
+	},
+	"formatter": {
+		"indentStyle": "tab",
+		"indentWidth": 1
 	}
 }
