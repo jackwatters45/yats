@@ -3,8 +3,6 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 import MailingForm from "@/components/forms/MailingForm";
 import Layout from "../layouts/Layout.astro";
-
-// TODO text
 ---
 
 <Layout>
@@ -14,18 +12,18 @@ import Layout from "../layouts/Layout.astro";
     <div
       class="text-sm sm:text-base pb-6 font-bold text-mate-green dark:text-mate-light-green"
     >
-      Discover new data flow
+      Ya Tú Sabes
     </div>
     <h2
-      class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide text-mate-grey dark:text-mate-white px-12 md:px-16 lg:px-20"
+      class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-mate-grey dark:text-mate-white px-12 md:px-16 lg:px-20"
     >
-      Convenient Web Applications For Business
+      A Modern Productivity Tool Suite
     </h2>
     <div
       class="text-mate-muted-dark dark:text-mate-muted-light lg:text-lg text-base pt-10 px-12 max-w-screen-sm"
     >
-      Experience seamless business integrations and powerful insights with our
-      cutting-edge analytic tools.
+      Our applications are designed to make your life easier and help you focus
+      on the things that matter
     </div>
     <div class="pt-12">
       <a
@@ -52,31 +50,31 @@ import Layout from "../layouts/Layout.astro";
       <div
         class="text-sm sm:text-base pb-6 font-bold text-mate-green dark:text-mate-light-green"
       >
-        Discover new data flow
+        Connect your informal teams
       </div>
       <h3
-        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-mate-grey dark:text-mate-white"
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-mate-grey dark:text-mate-white"
       >
         Team Send
       </h3>
       <div
         class="text-mate-muted-dark dark:text-mate-muted-light lg:text-lg text-base py-12 max-w-screen-sm"
       >
-        Experience seamless business integrations and powerful insights with our
-        cutting-edge analytic tools.
+        Coordinate emails, SMS, and GroupMe messages effortlessly from a single
+        interface. Stay connected across all platforms with Team Send
       </div>
       <ul class="pl-5 list-disc space-y-4">
         <li class="">
-          Experience seamless business integrations and powerful insights with
-          our cutting-edge analytic tools.
+          Schedule messages up to a year in the future and send them to your
+          team members at the perfect time
         </li>
         <li class="">
-          Experience seamless business integrations and powerful insights with
-          our cutting-edge analytic tools.
+          Include up to 3 different reminders to ensure your team never misses a
+          beat
         </li>
         <li class="">
-          Experience seamless business integrations and powerful insights with
-          our cutting-edge analytic tools.
+          Create recurring messages to make your life easier and allow you to
+          focus on more important tasks
         </li>
       </ul>
     </div>
@@ -107,31 +105,32 @@ import Layout from "../layouts/Layout.astro";
       <div
         class="text-sm sm:text-base pb-6 font-bold text-mate-green dark:text-mate-light-green"
       >
-        Discover new data flow
+        Connect your communication channels
       </div>
       <h3
-        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-mate-grey dark:text-mate-white"
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold king-wide text-mate-grey dark:text-mate-white"
       >
-        Team Send
+        Organize Efficently
       </h3>
       <div
         class="text-mate-muted-dark dark:text-mate-muted-light lg:text-lg text-base py-12 max-w-screen-sm"
       >
-        Experience seamless business integrations and powerful insights with our
-        cutting-edge analytic tools.
+        Team Send is the only platform that allows you to connect all your
+        informal communication channels in one place. Coordinate with your team
+        across all platforms.
       </div>
       <ul class="pl-5 list-disc space-y-4">
         <li class="">
-          Experience seamless business integrations and powerful insights with
-          our cutting-edge analytic tools.
+          Leverage your existing Twilio account or our built-in SMS
+          (pay-as-you-go) to send text messages to your team.
         </li>
         <li class="">
-          Experience seamless business integrations and powerful insights with
-          our cutting-edge analytic tools.
+          Send emails to your team members. Just connect your gmail account and
+          you're good to go.
         </li>
         <li class="">
-          Experience seamless business integrations and powerful insights with
-          our cutting-edge analytic tools.
+          Connect to your GroupMe groups and add bots that can send and listen
+          to messages.
         </li>
       </ul>
     </div>
@@ -165,6 +164,7 @@ import Layout from "../layouts/Layout.astro";
     const teamSendImg2 = document.querySelector(
       '.team-send-img2',
     ) as HTMLImageElement;
+
     if (prefersDarkMode) {
       document.documentElement.classList.add('dark');
 
