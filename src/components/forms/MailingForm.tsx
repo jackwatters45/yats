@@ -11,6 +11,7 @@ import {
 	FormLabel,
 	FormMessage,
 } from "@/components/ui/form";
+import { getBaseURL } from "@/lib/utils";
 import {
 	Card,
 	CardContent,
@@ -39,7 +40,7 @@ export default function MailingForm() {
 
 	async function onSubmit(values: MailingFormSchema) {
 		try {
-			const response = await fetch("/api/mailing-list", {
+			const response = await fetch(`/${getBaseURL()}/api/mailing-list`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(values),

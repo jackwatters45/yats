@@ -37,7 +37,7 @@ export default function NavMenu() {
 								href="#"
 								Icon={
 									<img
-										src="https://res.cloudinary.com/drheg5d7j/image/upload/v1713998845/Yats_Logo_Red__1_-removebg-preview_3_jc8kjo.webp"
+										src="https://res.cloudinary.com/drheg5d7j/image/upload/v1713999196/Yats_Logo_Red__1_-removebg-preview_3_viyrsm.webp"
 										alt="Música Pa Que"
 										className="mb-1"
 									/>

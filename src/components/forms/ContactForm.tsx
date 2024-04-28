@@ -18,6 +18,7 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { getBaseURL } from "@/lib/utils";
 import { useState } from "react";
 import {
 	Card,
@@ -80,7 +81,7 @@ export default function ContactForm() {
 		console.log(JSON.stringify(formData));
 
 		try {
-			const response = await fetch("/api/contact-request", {
+			const response = await fetch(`/${getBaseURL()}/api/contact-request`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(formData),
