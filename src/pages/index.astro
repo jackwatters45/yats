@@ -141,10 +141,6 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const prefersDarkMode =
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-
     const darkTeamSendImg1 =
       'https://res.cloudinary.com/drheg5d7j/image/upload/v1714179639/teams-send-groups-dark_cxwusq.webp';
 
@@ -165,18 +161,25 @@ import Layout from "../layouts/Layout.astro";
       '.team-send-img2',
     ) as HTMLImageElement;
 
-    if (prefersDarkMode) {
-      document.documentElement.classList.add('dark');
-
-      if (teamSendImg1) teamSendImg1.src = darkTeamSendImg1;
-
-      if (teamSendImg2) teamSendImg2.src = darkTeamSendImg2;
-    } else {
-      document.documentElement.classList.remove('dark');
-
-      if (teamSendImg1) teamSendImg1.src = lightTeamSendImg1;
-
-      if (teamSendImg2) teamSendImg2.src = lightTeamSendImg2;
+    function updateImages(prefersDarkMode: boolean) {
+      if (prefersDarkMode) {
+        document.documentElement.classList.add('dark');
+        if (teamSendImg1) teamSendImg1.src = darkTeamSendImg1;
+        if (teamSendImg2) teamSendImg2.src = darkTeamSendImg2;
+      } else {
+        document.documentElement.classList.remove('dark');
+        if (teamSendImg1) teamSendImg1.src = lightTeamSendImg1;
+        if (teamSendImg2) teamSendImg2.src = lightTeamSendImg2;
+      }
     }
+
+    const darkModeMediaQuery = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    );
+    updateImages(darkModeMediaQuery.matches);
+
+    darkModeMediaQuery.addEventListener('change', (event) => {
+      updateImages(event.matches);
+    });
   });
 </script>
