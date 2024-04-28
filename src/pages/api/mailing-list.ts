@@ -206,7 +206,7 @@ body {
   Yats Support
 </div>
 <div class="footer">
-<p class="unsubscribe">If you did not intend to join our mailing list or if you wish to opt-out, please <a href="https://yatusabes.co/unsubscribe?email=${email}">click here</a> to unsubscribe.</p>
+<p class="unsubscribe">If you did not intend to join our mailing list or wish to opt-out, please <a href="https://yatusabes.co/unsubscribe?email=${email}">click here</a> to unsubscribe.</p>
   <p>
     If you have any questions, feel free to <a
       href="mailto:support@yatusabes.co">contact us</a
