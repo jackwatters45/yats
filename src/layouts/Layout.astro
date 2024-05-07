@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Nav from "@/components/nav/Nav.astro";
+import Posthog from "@/components/posthog.astro";
 import { Toaster } from "@/components/ui/toaster";
 import "../styles/globals.css";
 
@@ -32,6 +33,7 @@ const { title, description } = Astro.props;
       rel="stylesheet"
     />
     <ViewTransitions />
+    <Posthog />
   </head>
   <body>
     <div class="flex min-h-screen flex-col items-center gap-4 font-sans">

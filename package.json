@@ -40,6 +40,7 @@
 		"libphonenumber-js": "^1.10.61",
 		"lucide-react": "^0.372.0",
 		"next-themes": "^0.3.0",
+		"posthog-js": "^1.130.2",
 		"rc-textarea": "^1.6.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
