@@ -11,7 +11,7 @@
 		"prepare": "husky"
 	},
 	"lint-staged": {
-		"*": "biome check --apply"
+		"*.{js,jsx,ts,tsx,astro,mjs}": "biome check --apply"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.5.10",
