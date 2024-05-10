@@ -20,25 +20,25 @@ export default function NavMenu() {
 						<ul className="grid gap-3 md:w-[360px] lg:w-[360px] p-3  shadow-2xl drop-shadow-2xl">
 							<NavDropdownItem
 								description="Easily send targeted bulk messages to your informal teams"
-								href="https://team-send.jackwatters.dev/"
+								href="https://teamsend.yatusabes.co/"
 								title="Team Send"
 								Icon={
 									<img
 										src="https://res.cloudinary.com/drheg5d7j/image/upload/v1713845385/Yats-logo-no-background_b9zh7w.webp"
-										alt="Team Send"
+										alt="Team Send Logo"
 										className="p-1 mb-1"
 									/>
 								}
 							/>
 							<Separator className="dark:bg-mate-white/10" />
 							<NavDropdownItem
-								title="Música Pa Que"
-								description="A better way to share music. Coming soon..."
-								href="#"
+								title="Responder"
+								description="Optimize Google Business replies using OpenAI"
+								href="https://responder.yatusabes.co/"
 								Icon={
 									<img
 										src="https://res.cloudinary.com/drheg5d7j/image/upload/v1713999196/Yats_Logo_Red__1_-removebg-preview_3_viyrsm.webp"
-										alt="Música Pa Que"
+										alt="Responder Logo"
 										className="mb-1"
 									/>
 								}

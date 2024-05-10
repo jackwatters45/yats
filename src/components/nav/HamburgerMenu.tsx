@@ -38,7 +38,7 @@ export default function HamburgerMenu() {
 							<AccordionContent className="space-y-3">
 								<HamburgerDropdownItem
 									description="Easily send targeted bulk messages to your informal teams"
-									href="https://team-send.jackwatters.dev/"
+									href="https://teamsend.yatusabes.co/"
 									title="Team Send"
 									Icon={
 										<img
@@ -50,13 +50,13 @@ export default function HamburgerMenu() {
 								/>
 								<Separator className="dark:bg-mate-white/10" />
 								<HamburgerDropdownItem
-									title="Música Pa Que"
+									title="Responder"
 									description="A better way to share music. Coming soon..."
-									href="#"
+									href="https://responder.yatusabes.co/"
 									Icon={
 										<img
 											src="https://res.cloudinary.com/drheg5d7j/image/upload/v1713999196/Yats_Logo_Red__1_-removebg-preview_3_viyrsm.webp"
-											alt="Música Pa Que"
+											alt="Responder Logo"
 											className="mb-1"
 										/>
 									}
@@ -77,9 +77,7 @@ export default function HamburgerMenu() {
 									title="Stories"
 									description="Tips,tTrends, and thought leadership"
 									href="/blog"
-									Icon={
-										<FileTextIcon width={30} height={30} className="mt-1" />
-									}
+									Icon={<FileTextIcon width={30} height={30} className="mt-1" />}
 								/>
 							</AccordionContent>
 						</AccordionItem>
