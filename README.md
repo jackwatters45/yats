@@ -23,3 +23,7 @@ Yats is a software development company that creates productivity software for in
 
 - Responder - Automated Google My Business review responses
 - Música pa que - A better way to share music with friends
+
+## Contact
+
+Jack Watters - [LinkedIn](https://www.linkedin.com/in/john-watters/) - [twitter](https://twitter.com/w0tters) - jackwattersdev@gmail.com
